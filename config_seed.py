@@ -1,4 +1,5 @@
 import unicodedata
+
 def normaliser_nom(nom_chef):
     texte=nom_chef.upper()
     texte=''.join(
@@ -10,6 +11,7 @@ def normaliser_nom(nom_chef):
         if caractere.isalnum() or caractere.isspace()
     )
     return texte
+
 def generer_graine(chaine):
     seed=0
     modulo=2147483647
@@ -21,9 +23,11 @@ def generer_graine(chaine):
 
         seed=(seed*37+position*valeur)%modulo
     return seed
+
+
 nom_chef="KENGNE GUEPOUOKSI Pierre Josué"
 chaine_normalisee=normaliser_nom(nom_chef)
-graine=generer_graine(chaine_normalisee)
+GRAINE=generer_graine(chaine_normalisee)
 
 print("Chaine utilisée :", chaine_normalisee)
-print("Graine du groupe :", graine)
+print("Graine du groupe :", GRAINE)
