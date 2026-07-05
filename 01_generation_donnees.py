@@ -38,22 +38,22 @@ def generer_dataset(graine: int, n: int = 200):
     return donnees
 
 
-jeu_de_donnees = generer_dataset(graine=GRAINE)
-#print("Exemple de données générées :", jeu_de_donnees[:5])  # Affiche les 5 premières entrées
+eleves_theme_D= generer_dataset(graine=GRAINE)
+#print("Exemple de données générées :", eleves_theme_D[:5])  # Affiche les 5 premières entrées
 
-with open("dataset.csv", "w", newline="", encoding="utf-8") as f:
+with open("eleves_theme_D.csv", "w", newline="", encoding="utf-8") as f:
         writer = csv.DictWriter(f, fieldnames=["id_eleve", "note_evaluation", "heures_travail", "orientation"])
         writer.writeheader()
-        writer.writerows(jeu_de_donnees)
+        writer.writerows(eleves_theme_D)
 
-print("\nFichier exporté : dataset.csv")
+print("\nFichier exporté : eleves_theme_D.csv")
 
 
 
 """
 # Chargement des données
-df1 = pd.read_csv('dataset_theme_D.csv')
-df2 = pd.read_csv('dataset_theme_D1.csv')
+df1 = pd.read_csv('eleves_theme_D.csv')
+df2 = pd.read_csv('eleves_theme_D1.csv')
 
 # Vérification d'égalité stricte
 sont_identiques = df1.equals(df2)
