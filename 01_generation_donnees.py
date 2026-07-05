@@ -38,13 +38,13 @@ def generer_dataset(graine: int, n: int = 200):
     return donnees
 
 
-jeu_de_donnees = generer_dataset(graine=GRAINE)
-#print("Exemple de données générées :", jeu_de_donnees[:5])  # Affiche les 5 premières entrées
+dataset = generer_dataset(graine=GRAINE)
+#print("Exemple de données générées :", dataset[:5])  # Affiche les 5 premières entrées
 
 with open("dataset.csv", "w", newline="", encoding="utf-8") as f:
         writer = csv.DictWriter(f, fieldnames=["id_eleve", "note_evaluation", "heures_travail", "orientation"])
         writer.writeheader()
-        writer.writerows(jeu_de_donnees)
+        writer.writerows(dataset)
 
 print("\nFichier exporté : dataset.csv")
 
